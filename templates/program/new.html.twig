@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Ajout d'une série</h1>
+
+    <div class="center container-fluid">
+        <div class="col-lg-3">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            {{ form_widget(form) }}
+            <input type='submit' value='Ajouter'>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}
