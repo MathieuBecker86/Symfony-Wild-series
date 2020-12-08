@@ -4,3 +4,5 @@
 [Vidéo quête Symfony 10](https://www.loom.com/share/8751efe6ca484a99b955bc2b68ffc929)
 
 [Vidéo quête Symfony 11](https://www.loom.com/share/b07f2e8fbcfb404d99eceba7bd9a7646)
+
+[Vidéo quête Symfony 12](https://www.loom.com/share/9c1126b38c1a4e198c9c425f52c4939a)
