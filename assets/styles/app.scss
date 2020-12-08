@@ -1,22 +1,131 @@
 @import "~bootstrap/scss/bootstrap";
 
-$primary: #FFFFFF;
-$secondary: #fae60c;
+$primary: #DCDCDC;
+$secondary: #000000;
 $third: #9370DB;
+$fourth: #FFFFFF;
 
 
 body {
-    background-color: $primary;
+  background-color: $primary;
+}
+
+h1 {
+  text-align: center;
+  color: $secondary;
+  margin: 50px;
+}
+
+h2 {
+  color: $third;
+}
+
+.index {
+  justify-content: space-around;
+  & .program {
+    width: 550px;
+    margin-bottom: 20px;
+  }
+  & .poster {
+    width: 460px;
+    height: 800px;
+  }
+  & .description {
+    background-color: #b1b1b1;
+    width: 460px;
+    height: 200px;
+
+    > p {
+      //white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
 }
 
 .navbar {
-    background-color: $third;
+  background-color: $third;
 }
 
 .navbar-brand {
-    color: $primary;
+  color: $primary;
 }
 
 .nav-link {
-   color: $primary;
+  color: $primary;
+}
+
+.retour {
+  text-align: center;
+}
+
+.actors {
+  display: flex;
+  justify-content: space-around;
+  & .actor {
+    text-align: center;
+  }
+  & .actor img{
+    width: 500px;
+  }
+}
+
+.media-body {
+  color: $third;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  & .category {
+    margin: 25px;
+  }
+}
+
+.error {
+  color: $third;
+  text-align: center;
+}
+
+.tab {
+  margin-left: 4em;
+}
+
+.ajout {
+  text-align: center;
+  & label {
+    color: $third;
+  }
+}
+
+thead {
+  color: $third;
+  & .action {
+    width: 100px;
+  }
+  & .title {
+    width: 200px;
+    text-align: center;
+  }
+}
+
+tbody {
+  color: white;
+  & .title {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  & label, button {
+    color: white;
+  }
 }
