@@ -1,0 +1,9 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div class="center container-fluid">
+    <div class="col-lg-3">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+</div>
