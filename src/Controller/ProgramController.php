@@ -49,9 +49,10 @@ Class ProgramController extends AbstractController
         // Get data from HTTP request
         $form->handleRequest($request);
         // Was the form submitted ?
-        if ($form->isSubmitted()) {
-            // Deal with the submitted data
-            // Get the Entity Manager
+        if ($form->isSubmitted() && $form->isValid()) {
+            // handle data, in example, an insert into database
+            // redirection
+
             $entityManager = $this->getDoctrine()->getManager();
             // Persist Category Object
             $entityManager->persist($program);
