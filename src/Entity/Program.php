@@ -6,10 +6,16 @@ use App\Repository\ProgramRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
+ * @UniqueEntity(
+ *     fields={"title"},
+ *     message="ERREUR Ce titre a déjà été utilisé"
+ * )
  */
 class Program
 {
@@ -22,27 +28,38 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le titre est indispensable poulet!")
+     * @Assert\Length(max="255")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message= "Ecris un petit quelque chose quand même")
+     * @Assert\Regex(
+     *     pattern="/(plus belle la vie)/",
+     *     match=false,
+     *     message="On parle de vraies séries ici"
+     * )
      */
     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
      */
     private $poster;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="programs")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank()
      */
     private $category;
 
     /**
      * @ORM\OneToMany(targetEntity=Season::class, mappedBy="program")
+     * @Assert\NotBlank()
      */
     private $seasons;
 
