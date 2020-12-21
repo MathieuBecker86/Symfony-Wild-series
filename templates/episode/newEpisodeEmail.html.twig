@@ -1,0 +1,34 @@
+{% extends 'layout/email.html.twig' %}
+
+{% block title %}Une nouvel épisode t'attends!{% endblock %}
+
+{% block body %}
+    {% apply inline_css(source('@styles/app.scss')) %}
+    <style>
+        body {
+            background-color: #9370DB;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+        }
+        p {
+            color: #FFFFFF;
+            text-align: center;
+        }
+        a {
+            color: #FFFFFF;
+        }
+    </style>
+
+<h1>L'épisode {{ episode.title }} de la série {{ program.title }}  est disponible</h1>
+
+<p>Salut jeune padawan, l'épisode {{ program.title }}  de la saison {{ season.id }} de {{ program.slug }} a été ajouté sur Wild Series</p>
+
+        <p>Résumé : {{episode.synopsis }}</p>
+
+        <p> N'attends plus et viens voir ton épisode inédit ! <br/>
+            <a href="http://localhost:8000/programs/{{ program.slug }}/seasons/{{ season.id }}/episodes/{{ episode.slug }}"> Voir l'épisode</a></p>
+    {% endapply %}
+    {% endblock %}
+

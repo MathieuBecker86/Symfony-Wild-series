@@ -1,0 +1,34 @@
+{% extends 'layout/email.html.twig' %}
+
+{% block title %}Une nouvelle série t'attends!{% endblock %}
+
+{% block body %}
+    {% apply inline_css(source('@styles/app.scss')) %}
+<style>
+    body {
+        background-color: #9370DB;
+    }
+    h1 {
+        color: #000000;
+        text-align: center;
+    }
+    p {
+        color: #FFFFFF;
+        text-align: center;
+    }
+    a {
+        color: #FFFFFF;
+    }
+</style>
+<h1>La série {{ program.title }} est disponible</h1>
+
+<p>Salut jeune padawan, la série {{ program.title }} a été ajoutée sur Wild Series</p>
+
+        <p>Synopsis : {{program.summary }}</p>
+
+        <p> N'attends plus et viens voir ta nouvelle série ! <br/>
+            <a href="http://localhost:8000/programs/{{ program.slug }}"> Voir la série</a></p>
+
+    {% endapply %}
+    {% endblock %}
+
